@@ -67,3 +67,8 @@
 .number8 {
   grid-area: 4 / 4 / 5 / 5;
 }
+
+.player-choice-button {
+  background-color: transparent;
+  border: none;
+}
