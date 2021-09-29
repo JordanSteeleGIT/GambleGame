@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import GridNumberButton from "./GridNumberButton";
 import GridArrowButton from "./GridArrowButton";
+import { DataContext } from "./DataContext";
 
 const GameGrid = () => {
+  const { cellsDisplayed } = useContext(DataContext);
+
+  const [gridShown, setGridShown] = cellsDisplayed;
   const [grid, setGrid] = useState(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+  useEffect(() => {
+    let newArr = [...gridShown];
+    newArr[Math.floor(Math.random() * 9)] = true;
+    console.log(newArr);
+    setGridShown(newArr);
+  }, []);
 
   function shuffle(array) {
     let currentIndex = array.length,

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { DataContext } from "./DataContext";
 
 const GridNumberButton = ({ ClassText, Text }) => {
-  const [gridShown, setGridShown] = useState(
-    Array.from({ length: 9 }, () => false)
-  );
+  const { cellsDisplayed } = useContext(DataContext);
+
+  const [gridShown, setGridShown] = cellsDisplayed;
 
   function cellClickHandler(cell) {
     let newArr = [...gridShown];
@@ -11,12 +12,14 @@ const GridNumberButton = ({ ClassText, Text }) => {
     setGridShown(newArr);
   }
   return (
-    <div
-      className={`button grid-number number${ClassText}`}
-      onClick={() => cellClickHandler(Text)}
-    >
-      <h1>{!gridShown[Text] ? "" : Text}</h1>
-    </div>
+    <>
+      <div
+        className={`button grid-number number${ClassText}`}
+        onClick={() => cellClickHandler(Text)}
+      >
+        <h1>{!gridShown[ClassText] ? "" : Text}</h1>
+      </div>
+    </>
   );
 };
 
