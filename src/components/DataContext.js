@@ -7,12 +7,16 @@ export const DataProvider = (props) => {
     Array.from({ length: 9 }, () => false)
   );
 
-  const [noOfGuesses, setNoOfGuesses] = useState(3);
+  const [gameData, setGameData] = useState({ guesses: 3, currency: 10000 });
+
+  const [gameScoring, setGameScoring] = useState([]);
+
   return (
     <DataContext.Provider
       value={{
         cellsDisplayed: [gridShown, setGridShown],
-        playerScore: [noOfGuesses, setNoOfGuesses],
+        playerInfo: [gameData, setGameData],
+        Scoreboard: [gameScoring, setGameScoring],
       }}
     >
       {props.children}

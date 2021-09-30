@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { DataContext } from "./DataContext";
 
 const GridNumberButton = ({ ClassText, Text }) => {
@@ -11,11 +11,12 @@ const GridNumberButton = ({ ClassText, Text }) => {
     newArr[cell] = true;
     setGridShown(newArr);
   }
+
   return (
     <>
       <div
         className={`button grid-number number${ClassText}`}
-        onClick={() => cellClickHandler(Text)}
+        onClick={() => cellClickHandler(ClassText)}
       >
         <h1>{!gridShown[ClassText] ? "" : Text}</h1>
       </div>

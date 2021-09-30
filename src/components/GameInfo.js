@@ -2,13 +2,14 @@ import React, { useContext } from "react";
 import { DataContext } from "./DataContext";
 
 const GameInfo = () => {
-  const { playerScore } = useContext(DataContext);
-  const [noOfGuesses, setNoOfGuesses] = playerScore;
+  const { playerInfo } = useContext(DataContext);
+
+  const [gameData, setGameData] = playerInfo;
   return (
     <>
       <div className="game-info-pannel">
-        <div>Guesses Left:{noOfGuesses}</div>
-        <div>Total Currency:{noOfGuesses}</div>
+        <h3>Guesses Left:{gameData.guesses}</h3>
+        <h3>Total Currency:{gameData.currency}</h3>
       </div>
     </>
   );
