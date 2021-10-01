@@ -1,11 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { DataContext } from "./DataContext";
 
 const GridNumberButton = ({ ClassText, Text }) => {
-  const { cellsDisplayed, playerInfo } = useContext(DataContext);
+  const { cellsDisplayed, playerInfo, playerButtonChoice } = useContext(
+    DataContext
+  );
 
   const [gridShown, setGridShown] = cellsDisplayed;
   const [gameData, setGameData] = playerInfo;
+  const [playerChoice, setPlayersChoice] = playerButtonChoice;
 
   function cellClickHandler(cell) {
     if (gameData.guesses > 0) {
@@ -19,6 +22,14 @@ const GridNumberButton = ({ ClassText, Text }) => {
   return (
     <>
       <div
+        style={{
+          backgroundColor:
+            ClassText === playerChoice[0] ||
+            ClassText === playerChoice[1] ||
+            ClassText === playerChoice[2]
+              ? "green"
+              : "purple",
+        }}
         className={`button grid-number number${ClassText}`}
         onClick={() => cellClickHandler(ClassText)}
       >

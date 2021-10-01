@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataContext } from "./DataContext";
 import { FiArrowUpCircle } from "react-icons/fi";
 
 const GridArrowButtons = ({ ClassText }) => {
+  const { playerButtonChoice } = useContext(DataContext);
+
+  const [playerChoice, setPlayersChoice] = playerButtonChoice;
   function rotateAmount(value) {
     switch (value) {
       case 0:
@@ -20,13 +24,26 @@ const GridArrowButtons = ({ ClassText }) => {
         return 0;
     }
   }
+
+  const possibleMoves = [
+    [0, 4, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [2, 4, 6],
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+  ];
   return (
     <>
       <div className={`button button${ClassText}`}>
         <button
           className="player-choice-button"
           style={{ transform: `rotate(${rotateAmount(ClassText)}deg)` }}
-          onClick={() => console.log(ClassText)}
+          onClick={() => {
+            setPlayersChoice(possibleMoves[ClassText]);
+          }}
         >
           <FiArrowUpCircle size="45px" />
         </button>

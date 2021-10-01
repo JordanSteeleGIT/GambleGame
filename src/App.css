@@ -54,7 +54,6 @@ body {
 }
 
 .grid-number {
-  background-color: purple;
   border: 1px solid black;
 }
 .button0 {
@@ -165,4 +164,8 @@ body {
 
 .player-currency h1 {
   font-size: 56px;
+}
+
+.player-choice-button:hover {
+  cursor: pointer;
 }
