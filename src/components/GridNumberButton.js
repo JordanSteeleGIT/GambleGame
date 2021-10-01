@@ -2,14 +2,18 @@ import React, { useContext, useEffect } from "react";
 import { DataContext } from "./DataContext";
 
 const GridNumberButton = ({ ClassText, Text }) => {
-  const { cellsDisplayed } = useContext(DataContext);
+  const { cellsDisplayed, playerInfo } = useContext(DataContext);
 
   const [gridShown, setGridShown] = cellsDisplayed;
+  const [gameData, setGameData] = playerInfo;
 
   function cellClickHandler(cell) {
-    let newArr = [...gridShown];
-    newArr[cell] = true;
-    setGridShown(newArr);
+    if (gameData.guesses > 0) {
+      let newArr = [...gridShown];
+      newArr[cell] = true;
+      setGridShown(newArr);
+      setGameData((prev) => ({ ...prev, guesses: gameData.guesses - 1 }));
+    }
   }
 
   return (

@@ -6,9 +6,7 @@ export const DataProvider = (props) => {
   const [gridShown, setGridShown] = useState(
     Array.from({ length: 9 }, () => false)
   );
-
   const [gameData, setGameData] = useState({ guesses: 3, currency: 10000 });
-
   const [gameScoring, setGameScoring] = useState([]);
 
   return (

@@ -5,7 +5,8 @@ import { DataContext } from "./DataContext";
 import { shuffle } from "./Util";
 
 const GameGrid = () => {
-  const { cellsDisplayed } = useContext(DataContext);
+  const { cellsDisplayed, playerInfo } = useContext(DataContext);
+  const [gameData, setGameData] = playerInfo;
 
   const [gridShown, setGridShown] = cellsDisplayed;
   const [grid, setGrid] = useState(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]));
@@ -19,6 +20,7 @@ const GameGrid = () => {
 
   return (
     <>
+      <h1>{gameData.guesses}</h1>
       <div className="parent">
         {Array(8)
           .fill(1)
