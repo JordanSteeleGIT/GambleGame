@@ -19,7 +19,7 @@ const GameButton = () => {
   const [endOfRound, setEndOfRound] = useState(false);
 
   function playersTurn() {
-    toggleGrid();
+    toggleGrid(true);
     setEndOfRound(true);
     let roundValue = gameScoring.find((o) => o.value === sumOfChoice());
     setGameData((prev) => ({
@@ -27,9 +27,9 @@ const GameButton = () => {
       currency: gameData.currency + roundValue.worth,
     }));
   }
-  function toggleGrid() {
+  function toggleGrid(bool) {
     gridShown.forEach((element, index) => {
-      gridShown[index] = true;
+      gridShown[index] = bool;
     });
   }
   function sumOfChoice() {
@@ -41,9 +41,7 @@ const GameButton = () => {
   }
 
   function resetGrid() {
-    gridShown.forEach((element, index) => {
-      gridShown[index] = false;
-    });
+    toggleGrid(false);
     let newArr = [...gridShown];
     newArr[Math.floor(Math.random() * 9)] = true;
     setGridShown(newArr);
