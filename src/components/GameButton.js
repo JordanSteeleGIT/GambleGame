@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { DataContext } from "./DataContext";
-import { shuffle, arrayShow } from "./Util";
+import { shuffle, scoreValuesStored } from "./Util";
 
 const GameButton = () => {
   const {
@@ -9,6 +9,7 @@ const GameButton = () => {
     numberGrid,
     Scoreboard,
     cellsDisplayed,
+    scoreBoardValues,
   } = useContext(DataContext);
 
   const [gameData, setGameData] = playerInfo;
@@ -16,8 +17,9 @@ const GameButton = () => {
   const [grid, setGrid] = numberGrid;
   const [gameScoring, setGameScoring] = Scoreboard;
   const [gridShown, setGridShown] = cellsDisplayed;
-  const [endOfRound, setEndOfRound] = useState(false);
+  const [scoreValues, setScoreValues] = scoreBoardValues;
 
+  const [endOfRound, setEndOfRound] = useState(false);
   function playersTurn() {
     toggleGrid(true);
     setEndOfRound(true);
@@ -55,6 +57,8 @@ const GameButton = () => {
       ...prev,
       guesses: (gameData.guesses = 3),
     }));
+    let scoreValuesShuffled = [...scoreValuesStored];
+    setScoreValues(shuffle(scoreValuesShuffled));
   }
   return (
     <div className="left-side-lower">

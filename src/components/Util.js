@@ -12,8 +12,7 @@ export function shuffle(array) {
 
   return array;
 }
-
-export const scoreValues = shuffle([
+export const scoreValuesStored = [
   6,
   7,
   8,
@@ -33,7 +32,7 @@ export const scoreValues = shuffle([
   22,
   23,
   24,
-]);
+];
 
 export const scoreWorth = [
   20000,

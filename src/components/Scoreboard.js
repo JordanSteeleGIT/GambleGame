@@ -1,19 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DataContext } from "./DataContext";
-import { shuffle, scoreValues, scoreWorth } from "./Util";
+import { shuffle, scoreWorth } from "./Util";
 
 const Scoreboard = () => {
-  const { Scoreboard, playerInfo } = useContext(DataContext);
+  const { Scoreboard, playerInfo, scoreBoardValues } = useContext(DataContext);
   const [gameScoring, setGameScoring] = Scoreboard;
   const [gameData, setGameData] = playerInfo;
+  const [scoreValues, setScoreValues] = scoreBoardValues;
+
   useEffect(() => {
-    scoreValues.map((score, index) => {
+    setGameScoring([]);
+    shuffle(scoreValues).map((score, index) => {
       setGameScoring((prevArray) => [
         ...prevArray,
         { value: score, worth: scoreWorth[index] },
       ]);
     });
-  }, []);
+  }, [scoreValues]);
 
   return (
     <>
