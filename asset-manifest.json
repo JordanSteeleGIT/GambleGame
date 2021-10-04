@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/GambleGame/static/css/main.666a1e4a.chunk.css",
-    "main.js": "/GambleGame/static/js/main.5fb1f800.chunk.js",
-    "main.js.map": "/GambleGame/static/js/main.5fb1f800.chunk.js.map",
+    "main.js": "/GambleGame/static/js/main.571b7e77.chunk.js",
+    "main.js.map": "/GambleGame/static/js/main.571b7e77.chunk.js.map",
     "runtime-main.js": "/GambleGame/static/js/runtime-main.a9b711e8.js",
     "runtime-main.js.map": "/GambleGame/static/js/runtime-main.a9b711e8.js.map",
     "static/js/2.9d4dea73.chunk.js": "/GambleGame/static/js/2.9d4dea73.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a9b711e8.js",
     "static/js/2.9d4dea73.chunk.js",
     "static/css/main.666a1e4a.chunk.css",
-    "static/js/main.5fb1f800.chunk.js"
+    "static/js/main.571b7e77.chunk.js"
   ]
 }
