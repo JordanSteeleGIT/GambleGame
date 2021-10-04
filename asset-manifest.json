@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/GambleGame/static/css/main.b295b85d.chunk.css",
+    "main.css": "/GambleGame/static/css/main.666a1e4a.chunk.css",
     "main.js": "/GambleGame/static/js/main.ca8cf823.chunk.js",
     "main.js.map": "/GambleGame/static/js/main.ca8cf823.chunk.js.map",
     "runtime-main.js": "/GambleGame/static/js/runtime-main.a9b711e8.js",
@@ -10,13 +10,13 @@
     "static/js/3.c3e8dec3.chunk.js": "/GambleGame/static/js/3.c3e8dec3.chunk.js",
     "static/js/3.c3e8dec3.chunk.js.map": "/GambleGame/static/js/3.c3e8dec3.chunk.js.map",
     "index.html": "/GambleGame/index.html",
-    "static/css/main.b295b85d.chunk.css.map": "/GambleGame/static/css/main.b295b85d.chunk.css.map",
+    "static/css/main.666a1e4a.chunk.css.map": "/GambleGame/static/css/main.666a1e4a.chunk.css.map",
     "static/js/2.9d4dea73.chunk.js.LICENSE.txt": "/GambleGame/static/js/2.9d4dea73.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a9b711e8.js",
     "static/js/2.9d4dea73.chunk.js",
-    "static/css/main.b295b85d.chunk.css",
+    "static/css/main.666a1e4a.chunk.css",
     "static/js/main.ca8cf823.chunk.js"
   ]
 }
