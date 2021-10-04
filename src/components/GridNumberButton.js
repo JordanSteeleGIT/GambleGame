@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { DataContext } from "./DataContext";
 
 const GridNumberButton = ({ ClassText, Text }) => {
@@ -11,8 +11,8 @@ const GridNumberButton = ({ ClassText, Text }) => {
   const [playerChoice, setPlayersChoice] = playerButtonChoice;
 
   function cellClickHandler(cell) {
-    if (gameData.guesses > 0) {
-      let newArr = [...gridShown];
+    let newArr = [...gridShown];
+    if (gameData.guesses > 0 && !newArr[cell]) {
       newArr[cell] = true;
       setGridShown(newArr);
       setGameData((prev) => ({ ...prev, guesses: gameData.guesses - 1 }));

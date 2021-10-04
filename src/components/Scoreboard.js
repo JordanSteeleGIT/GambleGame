@@ -28,7 +28,7 @@ const Scoreboard = () => {
                   className="worth"
                   style={{ color: score.worth < 0 ? "red" : "#41AF1E" }}
                 >
-                  {` £${new Intl.NumberFormat("en-IN", {
+                  {` £${new Intl.NumberFormat("en-EU", {
                     maximumSignificantDigits: 3,
                   }).format(score.worth)}`}
                 </p>
@@ -40,7 +40,7 @@ const Scoreboard = () => {
       <div className="player-currency">
         <h3>Your Currency:</h3>
         <h1>
-          {` £${new Intl.NumberFormat("en-IN", {
+          {` £${new Intl.NumberFormat("en-EU", {
             maximumSignificantDigits: 3,
           }).format(gameData.currency)}`}
         </h1>
