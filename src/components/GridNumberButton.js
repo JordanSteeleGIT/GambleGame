@@ -27,8 +27,8 @@ const GridNumberButton = ({ ClassText, Text }) => {
             ClassText === playerChoice[0] ||
             ClassText === playerChoice[1] ||
             ClassText === playerChoice[2]
-              ? "green"
-              : "purple",
+              ? "#2C8921"
+              : "#541764",
         }}
         className={`button grid-number number${ClassText}`}
         onClick={() => cellClickHandler(ClassText)}
